@@ -1,0 +1,50 @@
+@use 'variables';
+
+.documents{
+    margin-top: 93px;
+
+    border-radius: 4px;
+    overflow: hidden;
+
+    &__item{
+        height: 58px;
+
+        padding: 0 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:nth-child(odd){
+            background-color: variables.$grey-white;
+        }
+        &:nth-child(even){
+            background-color: variables.$white;
+        }
+    }
+
+    &__title{
+        @include variables.regular;
+        font-size: variables.$font-size-16;
+        line-height: variables.$font-line-height-160-int;
+        color: variables.$text-dark-white;
+    }
+    &__download{
+        width: 24px;
+        height: 20px;
+
+        @include variables.animation-button;
+        &:hover{
+            opacity: .7;
+        }
+        &:active{
+            opacity: .7;
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    .documents{
+        margin-top: 30px;
+    }
+}

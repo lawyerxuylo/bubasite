@@ -1,0 +1,25 @@
+@use 'variables';
+
+.about{
+    margin-top: 34px;
+
+    &__top-28{
+        margin-top: 28px;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+    &__top-32{
+        margin-top: 32px;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    .about{
+        margin-top: 24px;
+    }
+}
+

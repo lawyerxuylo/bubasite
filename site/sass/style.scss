@@ -1,0 +1,33 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+@media (max-width: 768px){
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
+}
+
+
+@import 'fonts',
+'variables',
+'components',
+'header',
+'footer',
+'about',
+'text',
+'catalog',
+'slider',
+'documents',
+'conditions',
+'advantages',
+'form',
+'communication';

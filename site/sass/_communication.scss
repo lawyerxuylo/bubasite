@@ -1,0 +1,57 @@
+@use 'variables';
+
+.communication{
+    display: flex;
+    justify-content: end;
+
+    &__form{
+        width: 495px;
+        
+        padding: 48px 40px;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 4px;
+        background-color: variables.$white;
+
+        @include variables.shadow-card;
+    }
+    &-form{
+        &__title{
+            @include variables.bold;
+            font-size: variables.$font-size-28;
+            line-height: variables.$font-line-height-150-int;
+            color: variables.$text-dark;
+            text-align: center;
+        }
+
+        &__content{
+            margin-top: 24px;
+        }
+
+        &__item{
+            margin-top: 20px;
+            &:first-child{
+                margin-top: 0;
+            }
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 545px){
+    .communication__form{
+        width: 100%;
+
+        padding: 24px 20px;
+    }
+    .communication-form__title{
+        font-size: 22px;
+    }
+    .communication-form__item{
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,89 @@
+@use 'variables';
+
+.catalog{
+    margin: 40px -15px -15px -15px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item{
+        margin: 15px;
+
+        width: calc(33.3% - 30px);
+        
+        background-color: variables.$white;
+        @include variables.shadow-card;
+
+        border-radius: 4px;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+    }
+    &-item{
+        &__images{
+            width: 100%;
+            height: 345px;
+
+            object-fit: cover;
+        }
+
+        &__content{
+            height: 95px;
+            max-height: 95px;
+
+            padding: 16px 20px 24px 20px;
+        }
+
+        &__title{
+            @include variables.bold;
+            font-size: variables.$font-size-20;
+            line-height: variables.$font-line-height-150-int;
+            color: variables.$text-dark;
+            text-align: center;
+        }
+        &__text{
+            margin-top: 4px;
+
+            @include variables.regular;
+            font-size: variables.$font-size-14;
+            line-height: variables.$font-line-height-150-int;
+            color: variables.$text-grey;
+            text-align: center;
+        }
+    }
+
+    &-link{
+        margin-top: 60px;
+
+        @include variables.bold;
+        font-size: variables.$font-size-24;
+        line-height: variables.$font-line-height-160-int;
+        color: variables.$text-dark;
+        color: variables.$text-dark-white; 
+        text-align: center;
+    }
+}
+
+@media (max-width: 1264px){
+    .catalog__item{
+        width: calc(50% - 30px);
+    }
+}
+@media (max-width: 1024px){
+    .catalog{
+        margin: 20px -10px -10px -10px;;
+    }
+    .catalog__item{
+        margin: 10px;
+    }
+    .catalog-link{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .catalog__item{
+        width: calc(100% - 30px);
+    }
+}

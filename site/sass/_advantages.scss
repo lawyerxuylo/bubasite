@@ -1,0 +1,105 @@
+@use 'variables';
+
+.advantages{
+    margin-top: 60px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__item{
+        width: 285px;
+        height: 188px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__img{
+        width: 48px;
+        aspect-ratio: 1;
+    }
+    &__title{
+        margin-top: 24px;
+
+        @include variables.bold;
+        font-size: variables$font-size-20;
+        line-height: variables.$font-line-height-150-int;
+        color: variables.$text-dark;
+        text-align: center;
+    }
+    &__text{
+        margin-top: 8px;
+
+        @include variables.regular;
+        font-size: variables.$font-size-16;
+        line-height: variables.$font-line-height-160-int;
+        color: variables.$text-grey;
+        text-align: center;
+    }
+
+    &__line{
+        width: 1px;
+
+        background-color: #DDDEE0;
+
+        overflow: hidden;
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 50px;
+
+            background: linear-gradient(to top, #DDDEE0, variables.$white);
+            // filter: blur(1px);
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 50px;
+
+            background: linear-gradient(to top, variables.$white, #DDDEE0);
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    .advantages{
+        margin-top: 30px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .advantages__line{
+        margin: 20px 0;
+
+        height: 1px;
+
+        width: 100%;
+
+        &::after{
+            height: 1px;
+            width: 30%;
+
+            background: linear-gradient(to left, #DDDEE0, variables.$white);
+        }
+        &::before{
+            height: 1px;
+            width: 30%;
+
+            left: auto;
+            right: 0;
+
+            background: linear-gradient(to right, #DDDEE0, variables.$white);
+        }
+    }
+}

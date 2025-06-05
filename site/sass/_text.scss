@@ -1,0 +1,88 @@
+@use 'variables';
+
+.text{
+    &__bold{
+        @include variables.bold;
+        font-size: variables.$font-size-20;
+        line-height: variables.$font-line-height-150-int;
+        color: variables.$text-dark;
+    }
+    &__regular{
+        @include variables.regular;
+        font-size: variables.$font-size-16;
+        line-height: variables.$font-line-height-160-int;
+        color: variables.$text-dark-white;
+
+        & ul{
+            @include variables.regular;
+        font-size: variables.$font-size-16;
+        line-height: variables.$font-line-height-160-int;
+        color: variables.$text-dark-white;
+        }
+    }
+
+    &__blockquote{
+        min-height: 20px;
+
+        padding-left: 58px;
+
+        position: relative;
+        &::after{
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 28px;
+            height: 20px;
+
+            background-image: url(../public/svg/braces.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__list{
+        padding-left: 157px;
+
+        & ul{
+            list-style-type: none;
+        }
+
+        & li{
+            margin-top: 4px;
+            &:first-child{
+                margin-top: 0;
+            }
+
+            position: relative;
+            &::after{
+                content: '';
+
+                position: absolute;
+                top: 5px;
+                left: -32px;
+
+                width: 16px;
+                aspect-ratio: 1;
+
+                background-image: url(../public/svg/check.svg);
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    .text__blockquote{
+        padding-left: 36px;
+    }
+    .text__blockquote::after{
+        width: 22.4px;
+        height: 16px;
+
+        background-size: 22.4px 16px;
+    }
+    .text__list{
+        padding-left: 30px;
+    }
+}

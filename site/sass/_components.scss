@@ -1,0 +1,126 @@
+@use 'variables';
+
+.wrapper-width{
+    margin: 0 auto;
+    max-width: 1920px;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 1230px;
+
+    &_grey{
+        background-color: variables.$grey;
+    }
+}
+.wrapper-content{
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &__title{
+        margin-top: 130px;
+        &:first-child{
+            margin-top: 0;
+        }
+
+        @include variables.bold;
+        font-size: variables.$font-size-46;
+        line-height: variables.$font-line-height-130-int;
+
+        text-align: center;
+
+        color: variables.$text-dark;
+    }
+
+    &__sub-title{
+        margin-top: 24px;
+
+        @include variables.regular;
+        font-size: variables.$font-size-18;
+        line-height: variables.$font-line-height-150-int;
+        color: variables.$text-grey;
+
+        text-align: center;
+    }
+
+    &_images{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 1600px){
+    .wrapper-width{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+@media (max-width: 1024px){
+    .wrapper-content__title{
+        font-size: 34px;
+    }
+
+    .wrapper-content{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+
+// Кнопки
+button{
+    cursor: pointer;
+}
+
+.button{
+    display: block;
+
+    @include variables.bold;
+    text-transform: uppercase;
+    text-align: center;
+
+    border-radius: 4px;
+    background: rgba($color: #000000, $alpha: 0);
+    border: none;
+
+    text-decoration: none;
+
+
+    &_border{
+        padding: 0px 40px;
+
+        font-size: variables.$font-size-16;
+        line-height: variables.$font-line-height-50-px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        text-align: center;
+        color: variables.$text-white;
+    
+        border: 1px solid;
+
+        &-white{
+            border-color: variables.$white;
+        }
+    }
+
+    &_green{
+        padding: 0px 40px;
+
+        font-size: variables.$font-size-16;
+        line-height: variables.$font-line-height-52-px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        text-align: center;
+        color: variables.$text-white;
+        background-color: variables.$green;
+    }
+
+    // анимация
+    @include variables.animation-button;
+    &:hover{
+        opacity: .7;
+    }
+    &:active{
+        opacity: 1;
+    }
+}
